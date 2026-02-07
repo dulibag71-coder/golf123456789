@@ -32,15 +32,30 @@ export default function AuthPage() {
 
     // Floating background animation
     const FloatingBalls = () => {
+        const [balls, setBalls] = useState<Array<{ width: number; height: number; x: number; y: number; duration: number }>>([]);
+
+        useEffect(() => {
+            const newBalls = [...Array(5)].map(() => ({
+                width: Math.random() * 300 + 100,
+                height: Math.random() * 300 + 100,
+                x: Math.random() * 1000,
+                y: Math.random() * 1000,
+                duration: Math.random() * 20 + 20,
+            }));
+            setBalls(newBalls);
+        }, []);
+
+        if (balls.length === 0) return null; // Don't render on server
+
         return (
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {[...Array(5)].map((_, i) => (
+                {balls.map((ball, i) => (
                     <motion.div
                         key={i}
                         className="absolute rounded-full bg-white/5 blur-xl"
                         initial={{
-                            x: Math.random() * 1000,
-                            y: Math.random() * 1000,
+                            x: ball.x,
+                            y: ball.y,
                             scale: Math.random() * 0.5 + 0.5,
                         }}
                         animate={{
@@ -48,14 +63,14 @@ export default function AuthPage() {
                             y: [Math.random() * 1000, Math.random() * 1000],
                         }}
                         transition={{
-                            duration: Math.random() * 20 + 20,
+                            duration: ball.duration,
                             repeat: Infinity,
                             repeatType: "reverse",
                             ease: "linear",
                         }}
                         style={{
-                            width: Math.random() * 300 + 100,
-                            height: Math.random() * 300 + 100,
+                            width: ball.width,
+                            height: ball.height,
                         }}
                     />
                 ))}
