@@ -53,7 +53,7 @@ export default function FeaturesSection() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-green-600 bg-clip-text text-transparent">
                         핵심 기능
                     </h2>
                     <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -69,19 +69,20 @@ export default function FeaturesSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className="group"
                         >
-                            <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/50">
-                                <CardContent className="p-6">
-                                    <div className="text-5xl mb-4">{feature.icon}</div>
-                                    <h3 className="text-2xl font-bold mb-3">{feature.title}</h3>
-                                    <p className="text-muted-foreground mb-4">
+                            <Card className="h-full border-2 border-border hover:border-primary/50 hover:shadow-2xl transition-all duration-300 bg-card/50 backdrop-blur-sm">
+                                <CardContent className="p-8">
+                                    <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">{feature.icon}</div>
+                                    <h3 className="text-2xl font-bold mb-4 text-foreground">{feature.title}</h3>
+                                    <p className="text-muted-foreground mb-6 leading-relaxed">
                                         {feature.description}
                                     </p>
-                                    <ul className="space-y-2">
+                                    <ul className="space-y-3">
                                         {feature.details.map((detail, i) => (
-                                            <li key={i} className="flex items-center text-sm">
-                                                <span className="text-primary mr-2">✓</span>
-                                                {detail}
+                                            <li key={i} className="flex items-center text-sm text-foreground/90">
+                                                <span className="text-primary font-bold mr-3">✓</span>
+                                                <span>{detail}</span>
                                             </li>
                                         ))}
                                     </ul>

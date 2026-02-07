@@ -58,7 +58,7 @@ export default function LiquidMetalHero({
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
             <LiquidMetal
                 {...liquidMetalPresets[2]}
-                style={{ position: "fixed", inset: 0, zIndex: -10 }}
+                className="fixed inset-0 -z-10"
             />
 
             <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
