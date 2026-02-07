@@ -1,11 +1,31 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { loginWithGoogle } from "@/lib/auth";
 
 export default function AuthPage() {
+    const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+
+    useEffect(() => {
+        setDimensions({
+            width: window.innerWidth,
+            height: window.innerHeight
+        });
+
+        const handleResize = () => {
+            setDimensions({
+                width: window.innerWidth,
+                height: window.innerHeight
+            });
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const handleGoogleLogin = async () => {
         await loginWithGoogle();
     };
@@ -20,18 +40,18 @@ export default function AuthPage() {
 
             {/* Floating golf balls animation */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {[...Array(5)].map((_, i) => (
+                {dimensions.width > 0 && [...Array(5)].map((_, i) => (
                     <motion.div
                         key={i}
                         className="absolute w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-green-600/20 backdrop-blur-sm"
                         initial={{
-                            x: Math.random() * window.innerWidth,
+                            x: Math.random() * dimensions.width,
                             y: -50,
                             scale: 0.5 + Math.random() * 0.5
                         }}
                         animate={{
-                            y: window.innerHeight + 50,
-                            x: Math.random() * window.innerWidth
+                            y: dimensions.height + 50,
+                            x: Math.random() * dimensions.width
                         }}
                         transition={{
                             duration: 10 + Math.random() * 10,
