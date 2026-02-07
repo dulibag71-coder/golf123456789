@@ -3,11 +3,11 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { loginWithGoogle } from "@/lib/auth";
 
 export default function AuthPage() {
-    const handleGoogleLogin = () => {
-        // TODO: Implement Google OAuth
-        console.log("Google login clicked");
+    const handleGoogleLogin = async () => {
+        await loginWithGoogle();
     };
 
     return (
