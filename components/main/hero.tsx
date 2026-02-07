@@ -32,22 +32,23 @@ export default function LiquidMetalHero({
         visible: {
             opacity: 1,
             transition: {
-                delayChildren: 0.2,
-                staggerChildren: 0.15
+                delayChildren: 0.3,
+                staggerChildren: 0.2
             }
         }
     };
 
     const itemVariants = {
-        hidden: { opacity: 0, y: 30 },
+        hidden: { opacity: 0, y: 50, scale: 0.9 },
         visible: {
             opacity: 1,
-            y: 0
+            y: 0,
+            scale: 1
         }
     };
 
     const buttonVariants = {
-        hidden: { opacity: 0, scale: 0.9 },
+        hidden: { opacity: 0, scale: 0.8 },
         visible: {
             opacity: 1,
             scale: 1
@@ -67,7 +68,13 @@ export default function LiquidMetalHero({
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
-                    transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+                    transition={{
+                        duration: 1,
+                        ease: "easeOut",
+                        type: "spring" as const,
+                        damping: 20,
+                        stiffness: 100
+                    }}
                 >
                     {badge && (
                         <motion.div
