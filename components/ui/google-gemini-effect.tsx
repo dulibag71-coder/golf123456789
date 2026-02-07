@@ -21,7 +21,7 @@ export const GoogleGeminiEffect = ({
     className?: string;
 }) => {
     return (
-        <div className={cn("sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden", className)}>
+        <div className={cn("sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-black", className)}>
             <div className="z-50 relative flex flex-col items-center">
                 <p className="text-4xl md:text-7xl font-bold pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400 dark:from-neutral-100 dark:to-neutral-400">
                     {title || `AI Swing Analysis`}
