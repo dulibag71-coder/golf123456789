@@ -21,11 +21,11 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
         const context = canvas.getContext("2d")
         if (!context) return
 
-        // Set up responsive dimensions
+        // Set up responsive dimensions - FULL SCREEN
         const updateDimensions = () => {
-            const containerWidth = Math.min(width, window.innerWidth - 40)
-            const containerHeight = Math.min(height, window.innerHeight - 100)
-            const radius = Math.min(containerWidth, containerHeight) / 2.5
+            const containerWidth = window.innerWidth
+            const containerHeight = window.innerHeight
+            const radius = Math.min(containerWidth, containerHeight) / 2.2 // Slightly larger globe
 
             const dpr = window.devicePixelRatio || 1
             canvas.width = containerWidth * dpr

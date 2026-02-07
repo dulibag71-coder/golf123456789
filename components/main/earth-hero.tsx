@@ -10,7 +10,7 @@ export default function EarthHero() {
 
             {/* Background Earth */}
             <div className="absolute inset-0 flex items-center justify-center z-0 opacity-80">
-                <RotatingEarth width={1000} height={1000} className="w-full h-full max-w-[800px] max-h-[800px]" />
+                <RotatingEarth width={2000} height={2000} className="w-full h-full" />
             </div>
 
             {/* Foreground Content */}
