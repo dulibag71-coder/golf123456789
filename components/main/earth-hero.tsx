@@ -20,7 +20,7 @@ export default function EarthHero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                    <h1 className="text-5xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400 mb-6">
+                    <h1 className="text-5xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-200 mb-6 drop-shadow-2xl">
                         AI Golf Coach
                     </h1>
                 </motion.div>
@@ -30,7 +30,7 @@ export default function EarthHero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 >
-                    <p className="text-lg md:text-2xl text-gray-300 max-w-2xl mx-auto mb-10">
+                    <p className="text-lg md:text-2xl text-gray-100 max-w-2xl mx-auto mb-10 drop-shadow-md">
                         Precision Swing Analysis powered by Artificial Intelligence.
                         <br className="hidden md:block" /> Connect with the world of smart golf.
                     </p>

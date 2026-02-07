@@ -134,8 +134,9 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
         let landFeatures: any
 
         const render = () => {
-            // Clear canvas
-            context.clearRect(0, 0, containerWidth, containerHeight)
+            // Clear canvas with black fill
+            context.fillStyle = "#000000"
+            context.fillRect(0, 0, containerWidth, containerHeight)
 
             const currentScale = projection.scale()
             const scaleFactor = currentScale / radius
