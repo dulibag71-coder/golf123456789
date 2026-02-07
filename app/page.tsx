@@ -16,7 +16,7 @@ export default function Home() {
         primaryCtaLabel="무료로 시작하기"
         secondaryCtaLabel="분석 체험하기"
         onPrimaryCtaClick={() => {
-          window.location.href = "/signup";
+          window.location.href = "/auth";
         }}
         onSecondaryCtaClick={() => {
           window.location.href = "/analysis";
