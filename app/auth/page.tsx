@@ -118,9 +118,9 @@ export default function AuthPage() {
                                 whileTap={{ scale: 0.98 }}
                             >
                                 <Button
-                                    onClick={handleGoogleLogin}
-                                    className="w-full bg-white hover:bg-gray-50 text-gray-900 border-2 border-gray-200 hover:border-gray-300 shadow-lg hover:shadow-xl transition-all duration-300 text-lg py-7 font-semibold group"
                                     variant="outline"
+                                    className="w-auto px-6 py-2 h-auto flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-gray-700 border-gray-300 transition-all hover:scale-105 active:scale-95 shadow-sm"
+                                    onClick={handleGoogleLogin}
                                 >
                                     <svg className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 24 24">
                                         <path

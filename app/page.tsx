@@ -1,6 +1,6 @@
 "use client";
 
-import GeminiHero from "@/components/main/gemini-hero";
+import EarthHero from "@/components/main/earth-hero";
 import FeaturesSection from "@/components/sections/features";
 import AnalysisTypesSection from "@/components/sections/analysis-types";
 import PricingSection from "@/components/sections/pricing";
@@ -9,7 +9,7 @@ import HowItWorksSection from "@/components/sections/how-it-works";
 export default function Home() {
   return (
     <main className="relative">
-      <GeminiHero />
+      <EarthHero />
 
       <FeaturesSection />
       <AnalysisTypesSection />
